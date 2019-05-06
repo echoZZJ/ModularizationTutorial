@@ -29,9 +29,19 @@ TODO: Add long description of the pod here.
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
-
+#  包含.a静态库必备
+#  s.vendored_libraries = 'podDemo1/Classes/*.a'
   s.source_files = 'podDemo1/Classes/**/*'
-  
+  s.default_subspec = 'MMATracking'
+
+  s.subspec 'MMATracking' do |mma|
+      mma.public_header_files = 'podDemo1/Classes/Library/*.h'
+      mma.vendored_libraries = 'podDemo1/Classes/Library/*.a'
+      mma.frameworks = 'SystemConfiguration','AdSupport','CoreTelephony','CoreLocation'
+      mma.libraries = 'xml2.2'
+      mma.xcconfig = {'OTHER_LDFLAGS' => '-ObjC -lxml2 -all_load'}
+
+  end
   # s.resource_bundles = {
   #   'podDemo1' => ['podDemo1/Assets/*.png']
   # }

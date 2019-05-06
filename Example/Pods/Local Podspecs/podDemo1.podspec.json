@@ -1,0 +1,40 @@
+{
+  "name": "podDemo1",
+  "version": "0.1.0",
+  "summary": "A short description of podDemo1.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/echoZZJ/podDemo1",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "echoZZJ": "zhangzijie.1@bytedance.com"
+  },
+  "source": {
+    "git": "https://github.com/echoZZJ/podDemo1.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "podDemo1/Classes/**/*",
+  "default_subspecs": "MMATracking",
+  "subspecs": [
+    {
+      "name": "MMATracking",
+      "public_header_files": "podDemo1/Classes/Library/*.h",
+      "vendored_libraries": "podDemo1/Classes/Library/*.a",
+      "frameworks": [
+        "SystemConfiguration",
+        "AdSupport",
+        "CoreTelephony",
+        "CoreLocation"
+      ],
+      "libraries": "xml2.2",
+      "xcconfig": {
+        "OTHER_LDFLAGS": "-ObjC -lxml2 -all_load"
+      }
+    }
+  ]
+}

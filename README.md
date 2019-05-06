@@ -22,7 +22,7 @@ pod 'podDemo1'
 
 ## Author
 
-echoZZJ, zhangzijie.1@bytedance.com
+echoZZJ zhangzijieecho@gmail.com
 
 ## License
 
